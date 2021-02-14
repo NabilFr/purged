@@ -51,9 +51,24 @@ export default {
       preset: {
         features: {
           // Fixes: https://github.com/tailwindcss/tailwindcss/issues/1190#issuecomment-546621554
-          "focus-within-pseudo-class": false
-        }
-      }
-    }
+          'focus-within-pseudo-class': false,
+        },
+      },
+    },
+    html: {
+      minify: {
+        collapseBooleanAttributes: true,
+        decodeEntities: true,
+        minifyCSS: true,
+        minifyJS: true,
+        processConditionalComments: true,
+        removeEmptyAttributes: true,
+        // this is the only line we're changing from defaults
+        // but we have to include all as they aren't merged
+        removeRedundantAttributes: false,
+        trimCustomFragments: true,
+        useShortDoctype: true,
+      },
+    },
   },
 }
